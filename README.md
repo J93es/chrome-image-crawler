@@ -1,6 +1,6 @@
 # img_crawler
 
-- 구글 드라이버를 이용한 이미지 크롤러 입니다.
+- 구글 드라이버를 이용한 이미지 크롤러입니다.
 
 # 사용법
 
@@ -24,10 +24,10 @@
 
 1.  Xpath 관련 문제
 
-    - img_urls_crawler.py에서 """ Xpath """ 문구를 찾는다.
-    - 크롬에서 다운받고자 하는 이미지에서 우클릭 > 검사 > 하이라이트 되어있는 코드에서 우클릭 > copy > copy full Xpath 후 파이썬 코드에 붙여넣는다.
+    - img_urls_crawler.py에서 """ Xpath """ 문구를 찾습니다.
+    - 크롬에서 다운받고자 하는 이미지에서 우클릭 > 검사 > 하이라이트 되어있는 코드에서 우클릭 > copy > copy full Xpath 후 파이썬 코드에 붙여넣습니다.
 
 2.  브라우저 권한 설정 관련 문제(404에러 등)
 
-    - img_urls_crawler.py와 img_srcs_saver.py에서 """ browser header setting """ 문구를 찾는다.
-    - header에 권한 관련 내용을 추가한다.
+    - img_urls_crawler.py와 img_srcs_saver.py에서 """ browser header setting """ 문구를 찾습니다.
+    - header에 권한 관련 내용을 추가합니다.
