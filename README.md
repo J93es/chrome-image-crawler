@@ -1,10 +1,14 @@
 # img_crawler
 
+- 구글 드라이버를 이용한 이미지 크롤러 입니다.
+
 # 사용법
 
-1. 파이썬 환경 설정
+1. 환경 설정
 
-   - selenium, time, csv, numpy, urllib를 사용할 수 있어야 합니다.
+   - 파이썬에서 selenium, time, csv, numpy, urllib.request를 사용할 수 있어야 합니다.
+   - 사용자 pc와 크롬 버전에 호환되는 chromedriver의 설치가 필요합니다. (https://chromedriver.chromium.org/downloads)
+     - "다운 받은 chromedriver"를 "현재 git에 존재하는 chromedriver"와 교체하세요. (디렉토리 구조는 당연히 변하면 안됩니당)
 
 2. img_urls_crawler.py 파일 및 디렉토리 구성
 
