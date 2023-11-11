@@ -21,8 +21,8 @@ def saveImgs(imgsUrl, targetName):
     opener = urllib.request.build_opener()
 
     """ browser header setting """
-    header = "Mozilla/5.0 Chrome/118.0.5993.70"
-    opener.addheaders = [(header)]
+    header = ('User-Agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1941.0 Safari/537.36')
+    opener.addheaders = [header]
     urllib.request.install_opener(opener)
 
     for imgUrl in imgsUrl:
@@ -36,10 +36,12 @@ def saveImgs(imgsUrl, targetName):
 
 
 """ custom this place """
-fileName = "가을"
+fileName = "겨울"
+
+""" path setting """
+path = f"./img_urls/{fileName}/"
 
 # csv를 열고 해당 값들을 불러오기
-path = f"./img_urls/{fileName}/"
 imgsUrl = openCsv(path, fileName)
 
 # url을 바탕으로 해당 이미지를 저장하기

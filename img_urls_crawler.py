@@ -91,18 +91,27 @@ def openCsv(path, fileName):
 
 # csv에 값들을 덮어쓰는 함수
 def writeCsvRows(targetData, path, fileName):
-    f = open(f"{path}{fileName}.csv", 'w')
-    write = csv.writer(f)
-    write.writerows(targetData)
+    try:
+        f = open(f"{path}{fileName}.csv", 'w')
+        write = csv.writer(f)
+        write.writerows(targetData)
+    except Exception as e:
+        f = open(f"./{fileName}.csv", 'w')
+        write = csv.writer(f)
+        write.writerows(targetData)
+        print('error :', e)
+        print(f"notice : because of error, CSV file saved ./{fileName}")
 
 
 """ custom this place """
 targetName = "눈없는 산"
 fileName = "겨울"
-maxLen = 100
+maxLen = 1
+
+""" path setting """
+path = f"./img_urls/{fileName}/"
 
 # 기존에 저장되었던 csv 파일을 열고 백업본을 만듦
-path = f"./img_urls/{fileName}/"
 imgsUrl = openCsv(path, fileName)
 writeCsvRows(np.array(imgsUrl).reshape(len(imgsUrl), 1), path, f"{fileName}_bak")
 
@@ -110,7 +119,7 @@ writeCsvRows(np.array(imgsUrl).reshape(len(imgsUrl), 1), path, f"{fileName}_bak"
 baseUrl = "http://www.google.co.kr/imghp?hl=ko"
 chromeOptions = webdriver.ChromeOptions()
 """ browser header setting """
-header = "Mozilla/5.0 Chrome/118.0.5993.70"
+header = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1941.0 Safari/537.36'
 chromeOptions.add_argument(header)
 chromeOptions.add_argument("lang=ko_KR")
 chromeOptions.add_argument("window-size=1920x1080")

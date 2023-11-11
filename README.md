@@ -20,7 +20,7 @@
    - img_srcs_saver.py에서 """ custom this place """ 문구를 찾고 fileName(파일 명)을 설정합니다.
    - img_srcs/fileName/ 디렉토리가 존재해야 합니다.
 
-# 기타 문제 해결
+# 기타 문제 해결 및 설정
 
 1.  Xpath 관련 문제
 
@@ -31,3 +31,7 @@
 
     - img_urls_crawler.py와 img_srcs_saver.py에서 """ browser header setting """ 문구를 찾습니다.
     - header에 권한 관련 내용을 추가합니다.
+
+3.  path 설정
+    - img_urls_crawler.py와 img_srcs_saver.py에서 """ path setting """ 문구를 찾습니다.
+    - path를 설정해 줍니다.
