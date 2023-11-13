@@ -58,6 +58,5 @@ path = f"./img_urls/{fileName}/"
 # csv를 열고 해당 값들을 불러오기
 imgsUrl = openCsv(path, fileName)
 
-
 # url을 바탕으로 해당 이미지를 저장하기
 saveImgs(imgsUrl, fileName)
