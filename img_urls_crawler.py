@@ -63,8 +63,8 @@ def getImgsUrl(driver, maxLen, imgsUrl):
 
             if tmp != None:
                 imgsUrl.append(tmp)
-                count += 1
                 print(count)
+                count += 1
             else:
                 print("missing img url : ", count)
 
@@ -88,6 +88,15 @@ def openCsv(path, fileName):
                 imgsUrl.append(l[0])
     except Exception as e:
         print('error :', e)
+        try:
+            f = open(f"{fileName}.csv", 'r')
+            csvReader = csv.reader(f)
+            for l in csvReader:
+                if l:
+                    imgsUrl.append(l[0])
+            print(f"notice : because of error, ./{fileName}.csv is opened")
+        except Exception as e:
+            print('error :', e)
 
     return imgsUrl
 
@@ -98,17 +107,17 @@ def writeCsvRows(targetData, path, fileName):
         write = csv.writer(f)
         write.writerows(targetData)
     except Exception as e:
+        print('error :', e)
         f = open(f"./{fileName}.csv", 'w')
         write = csv.writer(f)
         write.writerows(targetData)
-        print('error :', e)
         print(f"notice : because of error, CSV file saved ./{fileName}.csv")
 
 
 """ custom this place """
 targetName = "눈없는 산"
 fileName = "겨울"
-maxLen = 400
+maxLen = 2
 
 """ path setting """
 path = f"./img_urls/{fileName}/"
