@@ -6,12 +6,23 @@ import csv
 # csv를 열고 해당 값들을 불러오는 함수
 def openCsv(path, fileName):
     imgsUrl = []
-
-    f = open(f'{path}{fileName}.csv', 'r')
-    csvReader = csv.reader(f)
-    for l in csvReader:
-        if l:
-            imgsUrl.append(l[0])
+    try:
+        f = open(f"{path}{fileName}.csv", 'r')
+        csvReader = csv.reader(f)
+        for l in csvReader:
+            if l:
+                imgsUrl.append(l[0])
+    except Exception as e:
+        print('error :', e)
+        try:
+            f = open(f"{fileName}.csv", 'r')
+            csvReader = csv.reader(f)
+            for l in csvReader:
+                if l:
+                    imgsUrl.append(l[0])
+            print(f"notice : because of error, ./{fileName}.csv is opened")
+        except Exception as e:
+            print('error :', e)
 
     return imgsUrl
 
