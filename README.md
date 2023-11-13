@@ -6,19 +6,19 @@
 
 1. 환경 설정
 
-   - 파이썬에서 selenium, time, csv, numpy, urllib.request를 사용할 수 있어야 합니다.
+   - 파이썬에서 selenium, time, csv, numpy, urllib.request를 import할 수 있어야 합니다.
    - 사용자 pc와 크롬 버전에 호환되는 chromedriver의 설치가 필요합니다. (https://chromedriver.chromium.org/downloads)
      - "다운 받은 chromedriver"를 "현재 git에 존재하는 chromedriver"와 교체하세요. (디렉토리 구조는 당연히 변하면 안됩니당)
 
 2. img_urls_crawler.py 파일 및 디렉토리 구성
 
-   - img_urls_crawler.py에서 """ custom this place """ 문구를 찾고 targetName(검색어), fileName(파일 명), maxLen(수집할 이미지의 최대 개수)를 설정합니다.
-   - img_urls/{fileName}/{fileName}.csv 및 img_urls/{fileName}/{fileName}\_bak.csv의 디렉토리가 존재해야 합니다.
+   - img_urls_crawler.py에서 """ custom this place """ 문구를 찾고 targetName(검색어), fileName(이미지의 url을 저장할 csv 파일 명), maxLen(수집할 이미지의 최대 개수)를 설정합니다.
+   - img_urls/{fileName}/{fileName}.csv 및 img_urls/{fileName}/{fileName}\_bak.csv의 디렉토리 및 파일이 존재해야 합니다.
 
 3. img_srcs_saver.py 파일 및 디렉토리 구성
 
-   - img_srcs_saver.py에서 """ custom this place """ 문구를 찾고 fileName(파일 명)을 설정합니다.
-   - img_srcs/fileName/ 디렉토리가 존재해야 합니다.
+   - img_srcs_saver.py에서 """ custom this place """ 문구를 찾고 fileName(다운받을 이미지의 url이 존재하는 csv 파일 명)을 설정합니다.
+   - img_srcs/{fileName}/ 디렉토리가 존재해야 합니다.
 
 # 기타 문제 해결 및 설정
 
