@@ -80,12 +80,14 @@ def getImgsUrl(driver, maxLen, imgsUrl):
 # csv를 열고 해당 값들을 불러오는 함수
 def openCsv(path, fileName):
     imgsUrl = []
-
-    f = open(f"{path}{fileName}.csv", 'r')
-    csvReader = csv.reader(f)
-    for l in csvReader:
-        if l:
-            imgsUrl.append(l[0])
+    try:
+        f = open(f"{path}{fileName}.csv", 'r')
+        csvReader = csv.reader(f)
+        for l in csvReader:
+            if l:
+                imgsUrl.append(l[0])
+    except Exception as e:
+        print('error :', e)
 
     return imgsUrl
 
@@ -100,13 +102,13 @@ def writeCsvRows(targetData, path, fileName):
         write = csv.writer(f)
         write.writerows(targetData)
         print('error :', e)
-        print(f"notice : because of error, CSV file saved ./{fileName}")
+        print(f"notice : because of error, CSV file saved ./{fileName}.csv")
 
 
 """ custom this place """
 targetName = "눈없는 산"
 fileName = "겨울"
-maxLen = 1
+maxLen = 400
 
 """ path setting """
 path = f"./img_urls/{fileName}/"
@@ -134,4 +136,4 @@ driver.close()
 
 # 수집한 url을 csv파일에 저장
 imgsUrl = np.unique(imgsUrl)
-writeCsvRows(imgsUrl.reshape(len(imgsUrl), 1), path, f"{fileName}")
+writeCsvRows(imgsUrl.reshape(len(imgsUrl), 1), path, fileName)
