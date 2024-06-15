@@ -1,4 +1,4 @@
-# img_crawler
+# chrome-image-crawler
 
 - 기계학습(2023-2학기) 수업의 프로젝트에서 사용한 이미지 크롤러입니다.
 
